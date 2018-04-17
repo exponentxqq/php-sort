@@ -9,7 +9,7 @@
 namespace Sort;
 
 /**
- * 希尔排序
+ * 希尔排序-插入排序的升级版本
  * Class ShellSort
  * @package Sort
  */

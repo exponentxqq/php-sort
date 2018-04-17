@@ -17,11 +17,11 @@ ini_set('display_startup_errors',0);    //php启动错误信息
 ini_set('xdebug.max_nesting_level', 10000);
 error_reporting(E_ALL);
 
-$a = Sort::generateNearlyOrderedIntArray(100);
+$a = Sort::generateNearlyOrderedIntArray(10, 10);
 
 var_dump(count($a));
 //var_dump($a);
-$sort = new CountSort([1,1,5,5,5,7,2,5,3,2,1,6,7,8,5,3,1,16]);
+$sort = new InsertSort($a);
 $time = microtime(true);
 $arr = $sort->sort();
 //$arr = insertionSort([7, 5, 6, 1, 9, 2, 4]);

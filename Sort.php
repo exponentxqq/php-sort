@@ -52,6 +52,12 @@ abstract class Sort
         return $this->cycle_count;
     }
 
+    /**
+     * 生成一个n位的随机数组
+     * @param $n
+     *
+     * @return array
+     */
     public static function generateRandomArray($n)
     {
         $list = [];
@@ -61,6 +67,13 @@ abstract class Sort
         return $list;
     }
 
+    /**
+     * 生成一个可控制混乱度的随机数组
+     * @param      $n
+     * @param bool $swapTimes
+     *
+     * @return array
+     */
     public static function generateNearlyOrderedIntArray($n,$swapTimes = false) {
         $arr = [];
         for ($i=0; $i<$n; $i++) {

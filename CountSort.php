@@ -19,7 +19,7 @@ class CountSort extends Sort
     public function sort()
     {
         $countings = [];
-        $max = $this->arr[0];
+        $min = $max = $this->arr[0];
         for ($i = 0; $i < $this->length; $i++){
             $this->cycle_count++;
             if(isset($countings[$this->arr[$i]])) {
@@ -28,10 +28,11 @@ class CountSort extends Sort
                 $countings[$this->arr[$i]] = 1;
             }
             $max = $this->arr[$i] > $max ? $this->arr[$i] : $max;
+            $min = $this->arr[$i] < $min ? $this->arr[$i] : $min;
         }
 
         $arr = [];
-        for ($i = 0; $i <= $max; $i++){
+        for ($i = $min; $i <= $max; $i++){
             for ($j = 0; isset($countings[$i]) && $j < $countings[$i]; $j++) {
                 $this->cycle_count++;
                 $arr[] = $i;

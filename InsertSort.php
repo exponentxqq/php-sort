@@ -10,6 +10,9 @@ namespace Sort;
 
 /**
  * 插入排序
+ *  最好情况：O(n)
+ *  最坏情况：O(n^2)
+ *  平均情况：O(n^2)
  * Class InsertSort
  * @package Sort
  */
@@ -20,13 +23,8 @@ class InsertSort extends Sort
     {
         for ($i = 1; $i < $this->length; $i++) {
             $temp = $this->arr[$i];
-            for ($j = $i - 1; $j >= 0; $j--) {
-                if($temp < $this->arr[$j]){
-                    $this->cycle_count++;
-                    $this->arr[$j + 1] = $this->arr[$j];
-                }else{
-                    break;
-                }
+            for ($j = $i - 1; $j >= 0 && $temp < $this->arr[$j]; $j--) {
+                $this->arr[$j + 1] = $this->arr[$j];
             }
             $this->arr[$j + 1] = $temp;
         }
