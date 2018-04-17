@@ -8,10 +8,13 @@
 
 namespace Sort;
 
-
+/**
+ * 冒泡排序
+ * Class BubbleSort
+ * @package Sort
+ */
 class BubbleSort extends Sort
 {
-
     public function sort()
     {
         for ($i = 0; $i < $this->length; $i++) {

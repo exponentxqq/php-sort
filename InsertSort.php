@@ -8,7 +8,11 @@
 
 namespace Sort;
 
-
+/**
+ * 插入排序
+ * Class InsertSort
+ * @package Sort
+ */
 class InsertSort extends Sort
 {
 

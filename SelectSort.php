@@ -8,7 +8,11 @@
 
 namespace Sort;
 
-
+/**
+ * 选择排序
+ * Class SelectSort
+ * @package Sort
+ */
 class SelectSort extends Sort
 {
 

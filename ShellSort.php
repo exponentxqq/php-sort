@@ -8,7 +8,11 @@
 
 namespace Sort;
 
-
+/**
+ * 希尔排序
+ * Class ShellSort
+ * @package Sort
+ */
 class ShellSort extends Sort
 {
 
@@ -24,11 +28,11 @@ class ShellSort extends Sort
         for ($gap = floor($this->length / 2); $gap > 0; $gap = floor($gap / 2)) {
             // 第二层查询开始插入排序
             for ($i = $gap; $i < $this->length; $i++) {
-                $temp = $this->arr[$i];
+                $temp = $this->arr[(int)$i];
                 for ($j = $i - $gap; $j >= 0 && $this->arr[$j] > $temp; $j -= $gap) {
-                    $this->arr[$j + $gap] = $this->arr[$j];
+                    $this->arr[(int)$j + $gap] = $this->arr[$j];
                 }
-                $this->arr[$j + $gap] = $temp;
+                $this->arr[(int)$j + $gap] = $temp;
             }
         }
 

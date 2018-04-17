@@ -8,7 +8,11 @@
 
 namespace Sort;
 
-
+/**
+ * 快速排序
+ * Class QuickSort
+ * @package Sort
+ */
 class QuickSort extends Sort
 {
     public function sort()
