@@ -8,8 +8,6 @@
 
 namespace Sort;
 
-use tests\SelectSortTest;
-
 require '../autoload.php';
 
 ini_set('display_errors',1);            //错误信息
@@ -21,7 +19,7 @@ $a = Sort::generateNearlyOrderedIntArray(10, 10);
 
 var_dump(count($a));
 //var_dump($a);
-$sort = new InsertSort($a);
+$sort = new HeapSort($a);
 $time = microtime(true);
 $arr = $sort->sort();
 //$arr = insertionSort([7, 5, 6, 1, 9, 2, 4]);

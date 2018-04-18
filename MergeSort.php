@@ -16,6 +16,14 @@ namespace Sort;
 class MergeSort extends Sort
 {
 
+    /**
+     * 优化
+     *  1. 小数组使用插入排序
+     *  2. 左边最后一个比右边第一个小，则说明已经完全排好序，直接合并即可
+     * @param array $arr
+     *
+     * @return array
+     */
     public function sort($arr = [])
     {
         $this->setArr($arr);
@@ -50,5 +58,21 @@ class MergeSort extends Sort
         }
 
         return $result;
+    }
+
+    /**
+     * 自底向上底归并排序
+     */
+    public function sort2()
+    {
+        $arr = $this->arr;
+        for ($i = 1; $i < $this->length; $i+=$i) {
+            for ($j = 0; $j < $this->length; $j += 2 * $i) {
+                $end = min($j + 2 * $i - 1, $this->length - 1);
+                $left = array_slice($arr, $i, $j + $i - 1);
+                $right = array_slice($arr, $j + $i - 1, $end);
+            }
+        }
+        return $arr;
     }
 }
